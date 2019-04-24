@@ -1,0 +1,22 @@
+ext{
+    android=[
+            applicationId:"com.weidingqiang.wanbase",
+            compileSdkVersion : 28,
+//            buildToolsVersion : "25.0.3",
+            minSdkVersion :  19,
+            targetSdkVersion : 28,
+            versionCode  : 1,
+            versionName  : '1.0.0',
+//            supportLibVersion : '25.3.1',
+//            smackVersion : '4.2.4',
+            butterknife : '8.5.1',
+            dagger     : '2.11',
+            leakcanary : '1.5',
+            retrofit : '2.2.0',
+            okhttp : '3.7.0',
+            rxjava : '2.1.0'
+    ]
+    dependencies=[
+            "walle"          : "com.meituan.android.walle:library:1.1.6",
+    ]
+}
