@@ -1,28 +1,82 @@
 ext{
     android=[
-            applicationId:"com.weidingqiang.wanbase",
-            compileSdkVersion : 28,
-//            buildToolsVersion : "25.0.3",
-            minSdkVersion :  19,
-            targetSdkVersion : 28,
-            versionCode  : 1,
-            versionName  : '1.0.0',
-            supportLibVersion : '28.0.0',
-//            smackVersion : '4.2.4',
-            butterknife : '8.5.1',
-            dagger     : '2.11',
-            leakcanary : '1.5',
-            retrofit : '2.2.0',
-            okhttp : '3.7.0',
-            rxjava : '2.1.0'
+            applicationId           : "com.weidingqiang.wanbase",
+            compileSdkVersion       : 28,
+//            buildToolsVersion     : "25.0.3",
+            minSdkVersion           : 19,
+            targetSdkVersion        : 28,
+            versionCode             : 1,
+            versionName             : '1.0.0',
+            renderscriptTargetApi   : 21
     ]
+
+    version = [
+            supportLibraryVersion   : '28.0.0',
+            butterknifeVersion      : "8.8.1",
+            dagger                  : '2.11',
+            leakcanaryVersion       : "1.6.3",
+            retrofit                : '2.2.0',
+            okhttp                  : '3.7.0',
+            rxjava                  : '2.1.0'
+    ]
+
     dependencies=[
-            "walle"              : "com.meituan.android.walle:library:1.1.6",
-            "multidex"           : "com.android.support:multidex:1.0.1",
-            "appcompat-v7"       : "com.android.support:appcompat-v7:$android.supportLibVersion",
-            "junit"              : "junit:junit:4.12",
-            "runner"             : "com.android.support.test:runner:1.0.2",
-            "espresso"           : "com.android.support.test.espresso:espresso-core:3.0.2",
-            "constraint"         : "com.android.support.constraint:constraint-layout:1.1.3"
+            //https://github.com/JsonChao/Awesome-WanAndroid/blob/master/config.gradle
+            //base
+            "appcompat-v7"                      : "com.android.support:appcompat-v7:${version["supportLibraryVersion"]}",
+            "cardview-v7"                       : "com.android.support:cardview-v7:${version["supportLibraryVersion"]}",
+            "support-v4"                        : "com.android.support:support-v4:${version["supportLibraryVersion"]}",
+            "design"                            : "com.android.support:design:${version["supportLibraryVersion"]}",
+            "constraint"                        : "com.android.support.constraint:constraint-layout:1.1.3",
+
+            //ui
+
+            //net
+
+            //dao
+
+            //rx
+
+            //di
+            "butterknife"                       : "com.jakewharton:butterknife:${version["butterknifeVersion"]}",
+            "butterknife-compiler"              : "com.jakewharton:butterknife-compiler:${version["butterknifeVersion"]}",
+
+            //multidex
+            "multidex"                          : "com.android.support:multidex:1.0.1",
+
+            //leakcanary
+            "leakcanary-android"                : "com.squareup.leakcanary:leakcanary-android:${version["leakcanaryVersion"]}",
+            "leakcanary-android-no-op"          : "com.squareup.leakcanary:leakcanary-android-no-op:${version["leakcanaryVersion"]}",
+
+            //other
+            "walle"                             : "com.meituan.android.walle:library:1.1.6",
+            "logger"                            : "com.orhanobut:logger:2.1.1",
+            //https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/README-CN.md
+            "utilcodex"                         : "com.blankj:utilcode:1.23.7",   // if u use AndroidX, use the following   blankj:utilcodex
+            "autolayout"                        : "com.zhy:autolayout:1.4.5",
+            //https://github.com/YoKeyword/Fragmentation
+            "fragmentation"                     : "me.yokeyword:fragmentation:1.3.6",
+
+            //ui test
+            "espresso"                          : "com.android.support.test.espresso:espresso-core:3.0.2",
+            "espresso-idling-resource"          : "com.android.support.test.espresso:espresso-idling-resource:3.0.2",
+            "espresso-contrib"                  : "com.android.support.test.espresso:espresso-contrib:3.0.2",
+            "espresso-intents"                  : "com.android.support.test.espresso:espresso-intents:3.0.2",
+            "espresso-accessibility"            : "com.android.support.test.espresso:espresso-accessibility:3.0.2",
+            "espresso-web"                      : "com.android.support.test.espresso:espresso-web:3.0.2",
+            "idling-concurrent"                 : "com.android.support.test.espresso.idling:idling-concurrent:3.0.2",
+
+            //unit test , 为了整合mockito和PowerMockito，mockito暂时最高只支持2.8.9
+            "junit"                             : "junit:junit:4.12",
+            "mockito"                           : "org.mockito:mockito-core:2.8.9",
+            "powermock-module-junit4"           : "org.powermock:powermock-module-junit4:1.7.4",
+            "powermock-module-junit4-rule"      : "org.powermock:powermock-module-junit4-rule:1.7.4",
+            "powermock-api-mockito2"            : "org.powermock:powermock-api-mockito2:1.7.4",
+            "powermock-classloading-xstream"    : "org.powermock:powermock-classloading-xstream:1.7.4",
+            "robolectric"                       : "org.robolectric:robolectric:3.8",
+            "shadows-support-v4"                : "org.robolectric:shadows-support-v4:3.4-rc2",
+            "shadows-multidex"                  : "org.robolectric:shadows-multidex:3.+",
+            "runner"                            : "com.android.support.test:runner:1.0.2",
+
     ]
 }
