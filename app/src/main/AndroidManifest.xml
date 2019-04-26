@@ -27,10 +27,12 @@
         </activity>
 
         <!-- 初始化service -->
+        <!-- 初始化service -->
         <service
-            android:name=".service.InitializeService"
+            android:name="com.weidingqiang.rxqwelibrary.service.InitializeService"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="false" />
+
     </application>
 
 </manifest>

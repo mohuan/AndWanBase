@@ -8,7 +8,7 @@ import com.weidingqiang.rxqwelibrary.app.AppConfig;
 import com.weidingqiang.rxqwelibrary.app.AppConstants;
 import com.weidingqiang.rxqwelibrary.app.BaseApplication;
 import com.weidingqiang.rxqwelibrary.app.CrashHandler;
-import com.weidingqiang.wanbase.service.InitializeService;
+import com.weidingqiang.rxqwelibrary.service.InitializeService;
 
 import java.util.Properties;
 

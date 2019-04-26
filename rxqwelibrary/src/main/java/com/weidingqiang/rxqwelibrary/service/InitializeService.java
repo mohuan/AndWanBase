@@ -1,4 +1,4 @@
-package com.weidingqiang.wanbase.service;
+package com.weidingqiang.rxqwelibrary.service;
 
 import android.app.IntentService;
 import android.content.Context;
@@ -10,11 +10,11 @@ import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.DiskLogAdapter;
 import com.orhanobut.logger.Logger;
 import com.orhanobut.logger.PrettyFormatStrategy;
+import com.weidingqiang.rxqwelibrary.BuildConfig;
+import com.weidingqiang.rxqwelibrary.R;
 import com.weidingqiang.rxqwelibrary.app.AppConfig;
 import com.weidingqiang.rxqwelibrary.app.AppConstants;
 import com.weidingqiang.rxqwelibrary.utils.log.TxtFormatStrategy;
-import com.weidingqiang.wanbase.BuildConfig;
-import com.weidingqiang.wanbase.R;
 
 public class InitializeService extends IntentService {
 

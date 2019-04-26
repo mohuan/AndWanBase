@@ -1,4 +1,4 @@
-package com.weidingqiang.wanbase.api;
+package com.weidingqiang.rxqwelibrary.api;
 
 import android.text.TextUtils;
 
