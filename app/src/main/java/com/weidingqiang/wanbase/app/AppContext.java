@@ -9,6 +9,10 @@ import com.weidingqiang.rxqwelibrary.app.AppConstants;
 import com.weidingqiang.rxqwelibrary.app.BaseApplication;
 import com.weidingqiang.rxqwelibrary.app.CrashHandler;
 import com.weidingqiang.rxqwelibrary.service.InitializeService;
+import com.weidingqiang.wanbase.di.component.AppComponent;
+import com.weidingqiang.wanbase.di.component.DaggerAppComponent;
+import com.weidingqiang.wanbase.di.module.AppModule;
+import com.weidingqiang.wanbase.di.module.HttpModule;
 
 import java.util.Properties;
 
@@ -26,7 +30,7 @@ public class AppContext extends BaseApplication {
 
     private static AppContext instance;
 
-//    public static AppComponent appComponent;
+    public static AppComponent appComponent;
 
     public String getToken() {
         return token;
@@ -132,15 +136,15 @@ public class AppContext extends BaseApplication {
     }
 
 
-//    public static AppComponent getAppComponent() {
-//        if (appComponent == null) {
-//            appComponent = DaggerAppComponent.builder()
-//                    .appModule(new AppModule(instance))
-//                    .httpModule(new HttpModule())
-//                    .build();
-//        }
-//        return appComponent;
-//    }
+    public static AppComponent getAppComponent() {
+        if (appComponent == null) {
+            appComponent = DaggerAppComponent.builder()
+                    .appModule(new AppModule(instance))
+                    .httpModule(new HttpModule())
+                    .build();
+        }
+        return appComponent;
+    }
 
     /**
      * 获得当前app运行的AppContext

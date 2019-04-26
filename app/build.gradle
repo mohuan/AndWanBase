@@ -170,6 +170,8 @@ dependencies {
     //di
     implementation rootProject.ext.dependencies["butterknife"]
     annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+    implementation rootProject.ext.dependencies["dagger"]
+    annotationProcessor rootProject.ext.dependencies["dagger-compiler"]
     //other
     implementation rootProject.ext.dependencies["walle"]
     implementation project(':rxqwelibrary')

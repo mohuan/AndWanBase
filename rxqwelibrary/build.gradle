@@ -52,11 +52,11 @@ dependencies {
     api rootProject.ext.dependencies["utilcodex"]
     api rootProject.ext.dependencies["logger"]
     //显示图片框架
-    implementation rootProject.ext.dependencies["autolayout"]
+    api rootProject.ext.dependencies["autolayout"]
 
     //fragment 管控
     //https://github.com/YoKeyword/Fragmentation/blob/master/README_CN.md
-    implementation rootProject.ext.dependencies["fragmentation"]
+    api rootProject.ext.dependencies["fragmentation"]
 
     //di
     implementation rootProject.ext.dependencies["butterknife"]
@@ -77,4 +77,7 @@ dependencies {
     api rootProject.ext.dependencies["adapter-rxjava2"]
     //cook持久化管理
     api rootProject.ext.dependencies["PersistentCookieJar"]
+
+    //adapter
+    api rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
 }
