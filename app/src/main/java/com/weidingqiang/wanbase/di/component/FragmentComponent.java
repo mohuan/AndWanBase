@@ -4,6 +4,7 @@ import android.app.Activity;
 
 import com.weidingqiang.wanbase.di.module.FragmentModule;
 import com.weidingqiang.wanbase.di.scope.FragmentScope;
+import com.weidingqiang.wanbase.ui.help.fragment.HelpInfoFragment;
 
 import dagger.Component;
 
@@ -17,6 +18,6 @@ public interface FragmentComponent {
 
     Activity getActivity();
 
-//    void inject(CapitalFragment capitalFragment);
+    void inject(HelpInfoFragment helpInfoFragment);
 
 }
