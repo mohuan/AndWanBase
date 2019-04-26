@@ -23,7 +23,6 @@ public abstract class RootFragment<T extends BasePresenter> extends BaseFragment
     private ProgressImageView ivLoading;
     protected View viewError;
     protected View viewEmpty;
-    protected View  viewEmptyReport;
     private View viewLoading;
     private ViewGroup viewMain;
     protected ViewGroup mParent;
