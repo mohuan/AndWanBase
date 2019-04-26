@@ -4,6 +4,7 @@ import android.app.Activity;
 
 import com.weidingqiang.wanbase.di.module.ActivityModule;
 import com.weidingqiang.wanbase.di.scope.ActivityScope;
+import com.weidingqiang.wanbase.ui.login.activity.LoginActivity;
 
 import dagger.Component;
 
@@ -17,7 +18,7 @@ public interface ActivityComponent {
 
     Activity getActivity();
 
-//    void inject(MainActivity mainActivity);
+    void inject(LoginActivity loginActivity);
 
 
 }
