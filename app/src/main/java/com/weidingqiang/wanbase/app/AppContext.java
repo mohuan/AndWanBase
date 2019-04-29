@@ -71,9 +71,9 @@ public class AppContext extends BaseApplication {
 
     public boolean initLogin() {
 
-        if (AppConstants.DOWNLOAD_PATH.length() < 3) {
-            return false;
-        }
+//        if (AppConstants.DOWNLOAD_PATH.length() < 3) {
+//            return false;
+//        }
 
         if (getProperty(TOKEN)!= null) {
             //this.token = user.getToken();
