@@ -48,35 +48,36 @@ public class RxUtil {
                     @Override
                     public Flowable<T> apply(HttpResponse<T> httpResponse) {
 
-//                        // status == 2 时 token 失效
-//                        if(httpResponse.getStatus() == 1) {
-////                            if(EmptyUtils.isEmpty(httpResponse.getData()))
-//                            if(httpResponse.getData() == null)
-//                            {
-//                                 return createData((T)"success");
-//                            }
-//                            return createData(httpResponse.getData());
-//                        } else if(httpResponse.getStatus() == 2){
+                        if(httpResponse.getErrorCode() == 0) {
+//                            if(EmptyUtils.isEmpty(httpResponse.getData()))
+                            if(httpResponse.getData() == null)
+                            {
+                                 return createData((T)"success");
+                            }
+                            return createData(httpResponse.getData());
+                        }
+//                        else if(httpResponse.getStatus() == 2){
 //                            //需要发送事件
 //                            RxBus.getDefault().post(new LogoutEvent(LogoutEvent.LOGOUT));
 //                            return createData((T)"token error");
-//                        } else {
-//                            return Flowable.error(new ApiException(httpResponse.getMessage(), httpResponse.getStatus()));
 //                        }
-
-                        switch (httpResponse.getStatus()){
-                            case 1:
-                                if(httpResponse.getData() == null)
-                                {
-                                    return Flowable.error(new ApiException(httpResponse.getMessage(), httpResponse.getStatus()));
-                                }
-                                return createData(httpResponse.getData());
-//                            case 2:
-//                                RxBus.getDefault().post(new LogoutEvent(LogoutEvent.LOGOUT));
-//                                return createData((T)"token error");
-                            default:
-                                return Flowable.error(new ApiException(httpResponse.getMessage(), httpResponse.getStatus()));
+                        else {
+                            return Flowable.error(new ApiException(httpResponse.getErrorMsg(), httpResponse.getErrorCode()));
                         }
+
+//                        switch (httpResponse.getStatus()){
+//                            case 1:
+//                                if(httpResponse.getData() == null)
+//                                {
+//                                    return Flowable.error(new ApiException(httpResponse.getMessage(), httpResponse.getStatus()));
+//                                }
+//                                return createData(httpResponse.getData());
+////                            case 2:
+////                                RxBus.getDefault().post(new LogoutEvent(LogoutEvent.LOGOUT));
+////                                return createData((T)"token error");
+//                            default:
+//                                return Flowable.error(new ApiException(httpResponse.getMessage(), httpResponse.getStatus()));
+//                        }
 
                     }
                 });

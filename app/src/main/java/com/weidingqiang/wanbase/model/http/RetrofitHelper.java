@@ -1,8 +1,12 @@
 package com.weidingqiang.wanbase.model.http;
 
+import com.weidingqiang.wanbase.model.bean.UserVO;
 import com.weidingqiang.wanbase.model.http.api.QBaseApis;
+import com.weidingqiang.wanbase.model.http.response.HttpResponse;
 
 import javax.inject.Inject;
+
+import io.reactivex.Flowable;
 
 /**
  */
@@ -15,5 +19,8 @@ public class RetrofitHelper implements HttpHelper {
         this.qBaseApis = qBaseApis;
     }
 
-
+    @Override
+    public Flowable<HttpResponse<UserVO>> postLogin(String username, String password) {
+        return qBaseApis.postLogin(username, password);
+    }
 }

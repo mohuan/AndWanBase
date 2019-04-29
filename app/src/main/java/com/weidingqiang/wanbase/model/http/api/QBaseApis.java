@@ -1,5 +1,13 @@
 package com.weidingqiang.wanbase.model.http.api;
 
+import com.weidingqiang.wanbase.model.bean.UserVO;
+import com.weidingqiang.wanbase.model.http.response.HttpResponse;
+
+import io.reactivex.Flowable;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.POST;
+
 /**
  * 作者：weidingqiang on 2017/9/7 09:51
  * 邮箱：dqwei@iflytek.com
@@ -9,10 +17,10 @@ package com.weidingqiang.wanbase.model.http.api;
 
 public interface QBaseApis {
 
-//    //登陆-相关
-//    @FormUrlEncoded
-//    @POST("user/login.do")
-//    Flowable<HttpResponse<UserVO>> postLogin(@Field("username") String username, @Field("password") String password);
+    //登陆-相关
+    @FormUrlEncoded
+    @POST("/user/login")
+    Flowable<HttpResponse<UserVO>> postLogin(@Field("username") String username, @Field("password") String password);
 //
 //
 //

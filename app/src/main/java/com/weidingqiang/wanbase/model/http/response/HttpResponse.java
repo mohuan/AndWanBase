@@ -7,8 +7,8 @@ package com.weidingqiang.wanbase.model.http.response;
 
 public class HttpResponse<T> {
 
-    private String message;
-    private int status;
+    private String errorMsg;
+    private int errorCode;
     private T data;
 
     public T getData() {
@@ -19,19 +19,19 @@ public class HttpResponse<T> {
         this.data = data;
     }
 
-    public String getMessage() {
-        return message;
+    public String getErrorMsg() {
+        return errorMsg;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
     }
 
-    public int getStatus() {
-        return status;
+    public int getErrorCode() {
+        return errorCode;
     }
 
-    public void setStatus(int status) {
-        this.status = status;
+    public void setErrorCode(int errorCode) {
+        this.errorCode = errorCode;
     }
 }

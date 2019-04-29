@@ -14,12 +14,12 @@ import com.weidingqiang.rxqwelibrary.base.SimpleActivity;
 import com.weidingqiang.wanbase.R;
 import com.weidingqiang.wanbase.app.AppContext;
 import com.weidingqiang.wanbase.ui.login.activity.LoginActivity;
+import com.weidingqiang.wanbase.ui.main.MainActivity;
 
 import cn.bingoogolapple.bgabanner.BGABanner;
 import cn.bingoogolapple.bgabanner.BGALocalImageSize;
 
 /**
- * 1.欢迎页面    要      1       F
  * 2.权限        要     4
  * 3.rebing
  * 4.路由
@@ -27,16 +27,28 @@ import cn.bingoogolapple.bgabanner.BGALocalImageSize;
  * 6.登录        要     3
  * 7.下载        要     11
  * 8.升级        要     10
- * 9.启动页      要     2        F
  * 10.上传图片   要     12
  * 11.音频
  * 12.视频
  * 13.webview    要    6
  * 14.弹框       要     7
  * 15.全面屏
- * 16.腾讯皮肤    要             F
  * 17.图片加载 圆角图片   要          8
  * 18.topbar  bottombar  自定义组件   要     9
+ */
+
+/**
+ * 已存在的功能
+ * 1.log
+ * 2.autolayout 适配
+ * 3.qmui皮肤
+ * 4.bga欢迎页面
+ * 5.多状态
+ * 6.rxjava dagger
+ * 7.walle打包
+ * 8.fragmentation管理
+ * 9.utilcodex工具类
+ * 10.BaseRecyclerViewAdapterHelper
  */
 
 public class WelcomeActivity extends SimpleActivity {
@@ -69,8 +81,8 @@ public class WelcomeActivity extends SimpleActivity {
 
         //判断第一次进入
         SharedPreferences shared=getSharedPreferences("is", MODE_PRIVATE);
-//        boolean isfer=shared.getBoolean("isfer", true);
-        boolean isfer = true;
+        boolean isfer=shared.getBoolean("isfer", true);
+//        boolean isfer = true;
         SharedPreferences.Editor editor=shared.edit();
         if(isfer){
             //第一次
@@ -154,13 +166,13 @@ public class WelcomeActivity extends SimpleActivity {
 
         if(AppContext.getInstance().isLogin())
         {
-//            startActivity(MainActivity.newInstance(getApplicationContext()));
+            startActivity(MainActivity.newInstance(getApplicationContext()));
         }
         else{
-//            startActivity(LoginActivity.newInstance(getApplicationContext()));
+            startActivity(LoginActivity.newInstance(getApplicationContext()));
         }
 
-//        finish();
+        finish();
     }
 
     @Override

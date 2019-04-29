@@ -8,7 +8,7 @@ package com.weidingqiang.wanbase.model.http.api;
 public class ApiConstants {
 
     //配置HOST
-    public static String HOST = "http://117.50.17.150/uplift-server-mobile/";
+    public static String HOST = "https://www.wanandroid.com";
 
     //
     public static String STATIC_FILE = "http://117.50.17.150/static-files/";

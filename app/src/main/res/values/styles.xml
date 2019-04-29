@@ -11,4 +11,9 @@
         <item name="android:windowAnimationStyle">@style/activityAnimation</item>
     </style>
 
+    <style name="textSize_black029_48">
+        <item name="android:textColor">@color/black029</item>
+        <item name="android:textSize">@dimen/textsize_48</item>
+    </style>
+
 </resources>

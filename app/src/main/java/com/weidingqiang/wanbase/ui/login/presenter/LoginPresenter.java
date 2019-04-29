@@ -1,8 +1,14 @@
 package com.weidingqiang.wanbase.ui.login.presenter;
 
+import com.weidingqiang.wanbase.app.AppContext;
 import com.weidingqiang.wanbase.base.RxPresenter;
 import com.weidingqiang.wanbase.model.DataManager;
+import com.weidingqiang.wanbase.model.bean.UserVO;
+import com.weidingqiang.wanbase.model.http.exception.ApiException;
+import com.weidingqiang.wanbase.model.http.response.HttpResponse;
 import com.weidingqiang.wanbase.ui.login.contract.LoginContract;
+import com.weidingqiang.wanbase.utils.RxUtil;
+import com.weidingqiang.wanbase.widget.CommonSubscriber;
 
 import javax.inject.Inject;
 
@@ -30,4 +36,37 @@ public class LoginPresenter extends RxPresenter<LoginContract.View> implements L
 
     }
 
+    @Override
+    public void login(String loginName, String password) {
+        addSubscribe(mDataManager.postLogin(loginName, password)
+                .compose(RxUtil.<HttpResponse<UserVO>>rxSchedulerHelper())
+                .compose(RxUtil.<UserVO>handleTestResult())
+                .subscribeWith(
+                        new CommonSubscriber<UserVO>(mView) {
+                            @Override
+                            public void onNext(UserVO userData) {
+
+                                AppContext.getInstance().saveUserInfo(userData.getUsername());
+
+                                mView.loginSuccess();
+                            }
+
+
+                            @Override
+                            public void onError(Throwable e) {
+                                //当数据返回为null时 做特殊处理
+                                try {
+                                    int code = ((ApiException) e).getCode();
+                                    mView.responeError(e.getMessage());
+                                    return;
+                                } catch (Exception ex) {
+
+                                }
+                                mView.responeError("数据请求失败，请检查网络！");
+                            }
+
+                        }
+                )
+        );
+    }
 }
