@@ -9,7 +9,9 @@ import android.view.KeyEvent;
 import com.weidingqiang.wanbase.R;
 import com.weidingqiang.wanbase.base.BaseFragmentActivity;
 import com.weidingqiang.wanbase.ui.main.contract.MainContract;
+import com.weidingqiang.wanbase.ui.main.fragment.DialogFragment;
 import com.weidingqiang.wanbase.ui.main.fragment.NewsFragment;
+import com.weidingqiang.wanbase.ui.main.fragment.RoundImageFragment;
 import com.weidingqiang.wanbase.ui.main.presenter.MainPresenter;
 import com.weidingqiang.wanbase.widget.bottombar.BottomBar;
 
@@ -38,8 +40,8 @@ public class MainActivity extends BaseFragmentActivity<MainPresenter> implements
         SupportFragment firstFragment = findFragment(NewsFragment.class);
         if (firstFragment == null) {
             mFragments[FIRST] = NewsFragment.newInstance();
-            mFragments[SECOND] = NewsFragment.newInstance();
-            mFragments[THIRD] = NewsFragment.newInstance();
+            mFragments[SECOND] = RoundImageFragment.newInstance();
+            mFragments[THIRD] = DialogFragment.newInstance();
             mFragments[FOUR] = NewsFragment.newInstance();
 
             loadMultipleRootFragment(R.id.fl_tab_container, FIRST,
@@ -49,8 +51,8 @@ public class MainActivity extends BaseFragmentActivity<MainPresenter> implements
 
             // 这里我们需要拿到mFragments的引用,也可以通过getChildFragmentManager.findFragmentByTag自行进行判断查找(效率更高些),用下面的方法查找更方便些
             mFragments[FIRST] = firstFragment;
-            mFragments[SECOND] = findFragment(NewsFragment.class);
-            mFragments[THIRD] = findFragment(NewsFragment.class);
+            mFragments[SECOND] = findFragment(RoundImageFragment.class);
+            mFragments[THIRD] = findFragment(DialogFragment.class);
             mFragments[FOUR] = findFragment(NewsFragment.class);
         }
 

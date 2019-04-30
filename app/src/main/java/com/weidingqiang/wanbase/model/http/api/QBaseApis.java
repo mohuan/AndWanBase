@@ -1,12 +1,15 @@
 package com.weidingqiang.wanbase.model.http.api;
 
+import com.weidingqiang.wanbase.model.bean.FeedArticleListData;
 import com.weidingqiang.wanbase.model.bean.UserVO;
 import com.weidingqiang.wanbase.model.http.response.HttpResponse;
 
 import io.reactivex.Flowable;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 /**
  * 作者：weidingqiang on 2017/9/7 09:51
@@ -21,13 +24,12 @@ public interface QBaseApis {
     @FormUrlEncoded
     @POST("/user/login")
     Flowable<HttpResponse<UserVO>> postLogin(@Field("username") String username, @Field("password") String password);
-//
-//
-//
-//    //物业列表
-//    //typeCode 物业类型：BUILD 一栋/HOUSE 公寓
-//    @GET("realty/list.do")
-//    Flowable<HttpResponse<PropertyListVO>> getPropertyList(@Header("Authorization") String Authorization, @Query("typeCode") String typeCode);
+
+
+
+    //首页数据
+    @GET("/article/list/{num}/json")
+    Flowable<HttpResponse<FeedArticleListData>> getFeedArticleList(@Path("num") int num);
 
 
 }

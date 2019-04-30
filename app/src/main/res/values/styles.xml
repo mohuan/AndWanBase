@@ -21,4 +21,14 @@
         <item name="android:textColor">@color/black029</item>
         <item name="android:textSize">@dimen/textsize_36</item>
     </style>
+
+    <style name="textSize_graya8f_40">
+        <item name="android:textColor">@color/graya8f</item>
+        <item name="android:textSize">@dimen/textsize_40</item>
+    </style>
+
+    <style name="textSize_black029_44">
+        <item name="android:textColor">@color/black029</item>
+        <item name="android:textSize">@dimen/textsize_44</item>
+    </style>
 </resources>

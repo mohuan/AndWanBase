@@ -17,7 +17,7 @@ ext{
             leakcanaryVersion       : "1.6.3",
             retrofitVersion         : '2.2.0',
             okhttpVersion           : '3.9.0',
-            glideVersion            : "4.0.0",
+            glideVersion            : "3.7.0",
     ]
 
     dependencies=[
@@ -54,7 +54,7 @@ ext{
             "converter-fastjson-android"        : "org.ligboy.retrofit2:converter-fastjson-android:2.1.0",
             "adapter-rxjava2"                   : "com.squareup.retrofit2:adapter-rxjava2:${version["retrofitVersion"]}",
             "glide"                             : "com.github.bumptech.glide:glide:${version["glideVersion"]}",
-            "glide_compiler"                    : "com.github.bumptech.glide:compiler:${version["glideVersion"]}",
+//            "glide_compiler"                    : "com.github.bumptech.glide:compiler:${version["glideVersion"]}",
             //动态domain
             "retrofit-url-manager"              : "me.jessyan:retrofit-url-manager:1.4.0",
             "PersistentCookieJar"               :"com.github.franmontiel:PersistentCookieJar:v1.0.1",

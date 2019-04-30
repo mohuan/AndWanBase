@@ -51,8 +51,12 @@ dependencies {
     //other
     api rootProject.ext.dependencies["utilcodex"]
     api rootProject.ext.dependencies["logger"]
+    api rootProject.ext.dependencies["dialogplus"]
+
     //显示图片框架
     api rootProject.ext.dependencies["autolayout"]
+    api rootProject.ext.dependencies["glide"]
+//    api rootProject.ext.dependencies["glide_compiler"]
 
     //fragment 管控
     //https://github.com/YoKeyword/Fragmentation/blob/master/README_CN.md

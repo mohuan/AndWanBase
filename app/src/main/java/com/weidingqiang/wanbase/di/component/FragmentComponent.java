@@ -5,7 +5,9 @@ import android.app.Activity;
 import com.weidingqiang.wanbase.di.module.FragmentModule;
 import com.weidingqiang.wanbase.di.scope.FragmentScope;
 import com.weidingqiang.wanbase.ui.help.fragment.HelpInfoFragment;
+import com.weidingqiang.wanbase.ui.main.fragment.DialogFragment;
 import com.weidingqiang.wanbase.ui.main.fragment.NewsFragment;
+import com.weidingqiang.wanbase.ui.main.fragment.RoundImageFragment;
 
 import dagger.Component;
 
@@ -22,5 +24,9 @@ public interface FragmentComponent {
     void inject(HelpInfoFragment helpInfoFragment);
 
     void inject(NewsFragment newsFragment);
+
+    void inject(RoundImageFragment roundImageFragment);
+
+    void inject(DialogFragment dialogFragment);
 
 }
