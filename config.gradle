@@ -61,7 +61,7 @@ ext{
             "rxjava"                            : "io.reactivex.rxjava2:rxjava:2.1.0",
             "rxandroid"                         : "io.reactivex.rxjava2:rxandroid:2.0.1",
 //            "rxbinding"                         : "com.jakewharton.rxbinding2:rxbinding:2.0.1",
-//            "rxpermissions"                     : "com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar",
+            "rxpermissions"                     : "com.github.tbruyelle:rxpermissions:0.10.2",
 
             //di
             "butterknife"                       : "com.jakewharton:butterknife:${version["butterknifeVersion"]}",

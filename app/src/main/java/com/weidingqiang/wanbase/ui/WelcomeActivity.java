@@ -1,5 +1,6 @@
 package com.weidingqiang.wanbase.ui;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.View;
@@ -10,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import com.blankj.utilcode.util.ToastUtils;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.weidingqiang.rxqwelibrary.base.SimpleActivity;
 import com.weidingqiang.wanbase.R;
 import com.weidingqiang.wanbase.app.AppContext;
@@ -24,7 +27,6 @@ import cn.bingoogolapple.bgabanner.BGALocalImageSize;
  * 3.rebing
  * 4.路由
  * 5.列表        要     5
- * 6.登录        要     3
  * 7.下载        要     11
  * 8.升级        要     10
  * 10.上传图片   要     12
@@ -164,15 +166,24 @@ public class WelcomeActivity extends SimpleActivity {
             return;
         }
 
-        if(AppContext.getInstance().isLogin())
-        {
-            startActivity(MainActivity.newInstance(getApplicationContext()));
-        }
-        else{
-            startActivity(LoginActivity.newInstance(getApplicationContext()));
-        }
-
-        finish();
+        new RxPermissions(this)
+                .request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .subscribe(granted -> {
+                    if (granted) { // Always true pre-M
+                        // I can control the camera now
+                        if(AppContext.getInstance().isLogin())
+                        {
+                            startActivity(MainActivity.newInstance(getApplicationContext()));
+                        }
+                        else{
+                            startActivity(LoginActivity.newInstance(getApplicationContext()));
+                        }
+                        finish();
+                    } else {
+                        // Oups permission denied
+                        ToastUtils.showLong("您没有授权该权限，请在设置中打开授权");
+                    }
+                });
     }
 
     @Override
