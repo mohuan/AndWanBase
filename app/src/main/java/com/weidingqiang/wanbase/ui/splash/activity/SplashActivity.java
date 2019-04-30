@@ -1,5 +1,6 @@
-package com.weidingqiang.wanbase.ui;
+package com.weidingqiang.wanbase.ui.splash.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.View;
@@ -10,18 +11,22 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import com.weidingqiang.rxqwelibrary.base.SimpleActivity;
 import com.weidingqiang.wanbase.R;
-import com.weidingqiang.wanbase.app.AppContext;
+import com.weidingqiang.wanbase.base.RootActivity;
 import com.weidingqiang.wanbase.ui.login.activity.LoginActivity;
 import com.weidingqiang.wanbase.ui.main.MainActivity;
+import com.weidingqiang.wanbase.ui.splash.contract.SplashContract;
+import com.weidingqiang.wanbase.ui.splash.presenter.SplashPresenter;
 
+import butterknife.BindView;
 import cn.bingoogolapple.bgabanner.BGABanner;
 import cn.bingoogolapple.bgabanner.BGALocalImageSize;
 
 /**
- * 2.权限        要     4
- * 3.rebing
+ * Created by weidingqiang
+ */
+
+/**
  * 4.路由
  * 5.列表        要     5
  * 7.下载        要     11
@@ -48,20 +53,34 @@ import cn.bingoogolapple.bgabanner.BGALocalImageSize;
  * 8.fragmentation管理
  * 9.utilcodex工具类
  * 10.BaseRecyclerViewAdapterHelper
+ * 11.权限
+ * 12.rxbinding
+ * 13.全局参数
  */
 
-public class WelcomeActivity extends SimpleActivity {
+public class SplashActivity extends RootActivity<SplashPresenter> implements SplashContract.View {
 
-    private LinearLayout welcome_bg;
+    @BindView(R.id.welcome_bg)
+    LinearLayout welcome_bg;
 
-    private RelativeLayout banner_guide;
+    @BindView(R.id.banner_guide)
+    RelativeLayout banner_guide;
 
-    private BGABanner mBackgroundBanner;
-    private BGABanner mForegroundBanner;
+    @BindView(R.id.banner_guide_background)
+    BGABanner mBackgroundBanner;
+
+    @BindView(R.id.banner_guide_foreground)
+    BGABanner mForegroundBanner;
+
+
+    @Override
+    protected void initInject() {
+        getActivityComponent().inject(this);
+    }
 
     @Override
     protected int getLayout() {
-        return R.layout.activity_welcome;
+        return R.layout.activity_splash;
     }
 
     @Override
@@ -74,9 +93,6 @@ public class WelcomeActivity extends SimpleActivity {
         //设置全屏
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-        welcome_bg = (LinearLayout) this.findViewById(R.id.welcome_bg);
-        banner_guide = (RelativeLayout) this.findViewById(R.id.banner_guide);
 
         //判断第一次进入
         SharedPreferences shared=getSharedPreferences("is", MODE_PRIVATE);
@@ -91,9 +107,6 @@ public class WelcomeActivity extends SimpleActivity {
 
             banner_guide.setVisibility(View.VISIBLE);
             welcome_bg.setVisibility(View.GONE);
-
-            mBackgroundBanner = (BGABanner)this.findViewById(R.id.banner_guide_background);
-            mForegroundBanner = (BGABanner) this.findViewById(R.id.banner_guide_foreground);
 
             setListener();
             processLogic();
@@ -121,6 +134,11 @@ public class WelcomeActivity extends SimpleActivity {
             });
             welcome_bg.setAnimation(animation);
         }
+    }
+
+    @Override
+    public void responeError(String errorMsg) {
+
     }
 
     private void setListener() {
@@ -155,21 +173,13 @@ public class WelcomeActivity extends SimpleActivity {
     }
 
     private void initApp(Animation animation){
-//        if(!AppContext.getInstance().initLogin())
-//        {
-//            if(animation != null){
-//                welcome_bg.setAnimation(animation);
-//            }
-//            return;
-//        }
-//
-//        if(AppContext.getInstance().isLogin())
-//        {
-//            startActivity(MainActivity.newInstance(getApplicationContext()));
-//        }
-//        else{
-//            startActivity(LoginActivity.newInstance(getApplicationContext()));
-//        }
+        if(mPresenter.isLogin())
+        {
+            startActivity(MainActivity.newInstance(getApplicationContext()));
+        }
+        else{
+            startActivity(LoginActivity.newInstance(getApplicationContext()));
+        }
         finish();
     }
 
@@ -182,6 +192,4 @@ public class WelcomeActivity extends SimpleActivity {
             mBackgroundBanner.setBackgroundResource(android.R.color.white);
         }
     }
-
-
 }

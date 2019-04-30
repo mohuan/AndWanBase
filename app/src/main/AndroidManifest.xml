@@ -21,9 +21,8 @@
             android:value="1920" />
 
         <!-- 欢迎页面 -->
-        <!-- android:name=".ui.WelcomeActivity" -->
         <activity
-            android:name=".ui.WelcomeActivity"
+            android:name=".ui.splash.activity.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
