@@ -35,6 +35,9 @@ ext{
             "android-pickers"                   :"com.github.addappcn:android-pickers:1.0.3",
             //https://www.jianshu.com/p/b343fcff51b0
             //https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+            //PinnedSectionItemDecoration：一个强大的粘性标签库
+            //EasyRefreshLayout：这个库让你轻松实现下拉刷新和上拉更多
+            //EasySwipeMenuLayout：独立的侧滑删除
             "BaseRecyclerViewAdapterHelper": "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.21",
             //https://github.com/bingoogolapple/BGABanner-Android
             "bgaBanner"                         :"cn.bingoogolapple:bga-banner:2.2.5",

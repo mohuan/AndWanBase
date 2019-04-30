@@ -134,6 +134,39 @@ public class SupportAutoActivity extends AutoLayoutActivity implements ISupportA
         mDelegate.loadRootFragment(containerId, toFragment);
     }
 
+    /**
+     * 加载多个根Fragment
+     *
+     * @param containerId 容器id
+     * @param toFragments 目标Fragments
+     */
+    public void loadMultipleRootFragment(int containerId, int showPosition, SupportFragment... toFragments) {
+        mDelegate.loadMultipleRootFragment( containerId, showPosition, toFragments);
+    }
+
+    /**
+     * show一个Fragment,hide其他同栈所有Fragment
+     * 使用该方法时，要确保同级栈内无多余的Fragment,(只有通过loadMultipleRootFragment()载入的Fragment)
+     * <p>
+     * 建议使用更明确的{@link #showHideFragment(SupportFragment, SupportFragment)}
+     *
+     * @param showFragment 需要show的Fragment
+     */
+    public void showHideFragment(SupportFragment showFragment) {
+        showHideFragment(showFragment, null);
+    }
+
+    /**
+     * show一个Fragment,hide一个Fragment ; 主要用于类似微信主页那种 切换tab的情况
+     *
+     * @param showFragment 需要show的Fragment
+     * @param hideFragment 需要hide的Fragment
+     */
+
+    public void showHideFragment(SupportFragment showFragment, SupportFragment hideFragment) {
+        mDelegate.showHideFragment(showFragment, hideFragment);
+    }
+
     public void start(ISupportFragment toFragment) {
         mDelegate.start(toFragment);
     }

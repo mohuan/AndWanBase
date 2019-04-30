@@ -1,6 +1,5 @@
 package com.weidingqiang.wanbase.ui.splash.activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.View;
@@ -14,7 +13,7 @@ import android.widget.RelativeLayout;
 import com.weidingqiang.wanbase.R;
 import com.weidingqiang.wanbase.base.RootActivity;
 import com.weidingqiang.wanbase.ui.login.activity.LoginActivity;
-import com.weidingqiang.wanbase.ui.main.MainActivity;
+import com.weidingqiang.wanbase.ui.main.activity.MainActivity;
 import com.weidingqiang.wanbase.ui.splash.contract.SplashContract;
 import com.weidingqiang.wanbase.ui.splash.presenter.SplashPresenter;
 
@@ -38,7 +37,6 @@ import cn.bingoogolapple.bgabanner.BGALocalImageSize;
  * 14.弹框       要     7
  * 15.全面屏
  * 17.图片加载 圆角图片   要          8
- * 18.topbar  bottombar  自定义组件   要     9
  */
 
 /**
@@ -56,6 +54,7 @@ import cn.bingoogolapple.bgabanner.BGALocalImageSize;
  * 11.权限
  * 12.rxbinding
  * 13.全局参数
+ * 14.topbar  bottombar  自定义组件
  */
 
 public class SplashActivity extends RootActivity<SplashPresenter> implements SplashContract.View {

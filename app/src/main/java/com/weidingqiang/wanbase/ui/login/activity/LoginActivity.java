@@ -2,10 +2,8 @@ package com.weidingqiang.wanbase.ui.login.activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.blankj.utilcode.util.StringUtils;
 import com.blankj.utilcode.util.ToastUtils;
@@ -15,13 +13,12 @@ import com.weidingqiang.wanbase.R;
 import com.weidingqiang.wanbase.base.RootActivity;
 import com.weidingqiang.wanbase.ui.login.contract.LoginContract;
 import com.weidingqiang.wanbase.ui.login.presenter.LoginPresenter;
-import com.weidingqiang.wanbase.ui.main.MainActivity;
+import com.weidingqiang.wanbase.ui.main.activity.MainActivity;
 
 import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import io.reactivex.android.schedulers.AndroidSchedulers;
 
 /**
  * name: qwe112211
