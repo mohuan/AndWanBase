@@ -12,4 +12,17 @@ public interface PreferencesHelper {
 
     void setNightModeState(boolean state);
 
+    /**
+     * Set login status
+     *
+     * @param isLogin IsLogin
+     */
+    void setLoginStatus(boolean isLogin);
+
+    /**
+     * Get login status
+     *
+     * @return login status
+     */
+    boolean getLoginStatus();
 }

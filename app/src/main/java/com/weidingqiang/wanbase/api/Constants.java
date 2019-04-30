@@ -9,4 +9,8 @@ public class Constants {
 
     public static final String PRODUCT_ID = "CP000000000000014001";
 
+    /**
+     * Shared Preference key
+     */
+    public static final String LOGIN_STATUS = "login_status";
 }

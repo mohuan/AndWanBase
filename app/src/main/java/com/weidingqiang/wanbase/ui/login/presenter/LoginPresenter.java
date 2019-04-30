@@ -1,5 +1,8 @@
 package com.weidingqiang.wanbase.ui.login.presenter;
 
+import android.Manifest;
+
+import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.weidingqiang.wanbase.app.AppContext;
 import com.weidingqiang.wanbase.base.RxPresenter;
 import com.weidingqiang.wanbase.model.DataManager;
@@ -23,6 +26,7 @@ public class LoginPresenter extends RxPresenter<LoginContract.View> implements L
 
     @Inject
     public LoginPresenter(DataManager mDataManager) {
+        super(mDataManager);
         this.mDataManager = mDataManager;
     }
 
@@ -46,7 +50,7 @@ public class LoginPresenter extends RxPresenter<LoginContract.View> implements L
                             @Override
                             public void onNext(UserVO userData) {
 
-                                AppContext.getInstance().saveUserInfo(userData.getUsername());
+                                mDataManager.setLoginStatus(true);
 
                                 mView.loginSuccess();
                             }
@@ -68,5 +72,18 @@ public class LoginPresenter extends RxPresenter<LoginContract.View> implements L
                         }
                 )
         );
+    }
+
+    @Override
+    public void shareEventPermissionVerify(RxPermissions rxPermissions) {
+        addSubscribe(rxPermissions
+                .request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .subscribe(granted -> {
+                    if (granted) {
+                        mView.shareEventSuccess();
+                    } else {
+                        mView.responeError("授权失败");
+                    }
+                }));
     }
 }

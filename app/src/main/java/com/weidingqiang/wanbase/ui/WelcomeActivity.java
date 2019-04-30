@@ -1,6 +1,5 @@
 package com.weidingqiang.wanbase.ui;
 
-import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.View;
@@ -11,8 +10,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import com.blankj.utilcode.util.ToastUtils;
-import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.weidingqiang.rxqwelibrary.base.SimpleActivity;
 import com.weidingqiang.wanbase.R;
 import com.weidingqiang.wanbase.app.AppContext;
@@ -158,32 +155,22 @@ public class WelcomeActivity extends SimpleActivity {
     }
 
     private void initApp(Animation animation){
-        if(!AppContext.getInstance().initLogin())
-        {
-            if(animation != null){
-                welcome_bg.setAnimation(animation);
-            }
-            return;
-        }
-
-        new RxPermissions(this)
-                .request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                .subscribe(granted -> {
-                    if (granted) { // Always true pre-M
-                        // I can control the camera now
-                        if(AppContext.getInstance().isLogin())
-                        {
-                            startActivity(MainActivity.newInstance(getApplicationContext()));
-                        }
-                        else{
-                            startActivity(LoginActivity.newInstance(getApplicationContext()));
-                        }
-                        finish();
-                    } else {
-                        // Oups permission denied
-                        ToastUtils.showLong("您没有授权该权限，请在设置中打开授权");
-                    }
-                });
+//        if(!AppContext.getInstance().initLogin())
+//        {
+//            if(animation != null){
+//                welcome_bg.setAnimation(animation);
+//            }
+//            return;
+//        }
+//
+//        if(AppContext.getInstance().isLogin())
+//        {
+//            startActivity(MainActivity.newInstance(getApplicationContext()));
+//        }
+//        else{
+//            startActivity(LoginActivity.newInstance(getApplicationContext()));
+//        }
+        finish();
     }
 
     @Override

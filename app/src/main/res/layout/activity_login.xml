@@ -91,4 +91,16 @@
         style="@style/textSize_black029_48"
         />
 
+    <Button
+        android:layout_marginLeft="70px"
+        android:layout_marginRight="70px"
+        android:layout_marginTop="80px"
+        android:id="@+id/permiss_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="授权"
+        style="@style/textSize_black029_48"
+        />
+
+
 </com.zhy.autolayout.AutoLinearLayout>

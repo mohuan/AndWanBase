@@ -14,6 +14,7 @@ public class HelpPresenter extends RxPresenter<HelpContract.View> implements Hel
 
     @Inject
     public HelpPresenter(DataManager mDataManager) {
+        super(mDataManager);
         this.mDataManager = mDataManager;
     }
 

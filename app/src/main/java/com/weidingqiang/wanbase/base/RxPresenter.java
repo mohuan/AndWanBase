@@ -2,6 +2,7 @@ package com.weidingqiang.wanbase.base;
 
 import com.weidingqiang.rxqwelibrary.base.BasePresenter;
 import com.weidingqiang.rxqwelibrary.base.BaseView;
+import com.weidingqiang.wanbase.model.DataManager;
 
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
@@ -15,6 +16,12 @@ public class RxPresenter<T extends BaseView> implements BasePresenter<T> {
 
     protected T mView;
     protected CompositeDisposable mCompositeDisposable;
+
+    private DataManager mDataManager;
+
+    public RxPresenter(DataManager dataManager) {
+        this.mDataManager = dataManager;
+    }
 
     protected void unSubscribe() {
         if (mCompositeDisposable != null) {
@@ -34,6 +41,16 @@ public class RxPresenter<T extends BaseView> implements BasePresenter<T> {
             mCompositeDisposable = new CompositeDisposable();
         }
         mCompositeDisposable.add(RxBus.getDefault().toDefaultFlowable(eventType, act));
+    }
+
+    @Override
+    public boolean getLoginStatus() {
+        return mDataManager.getLoginStatus();
+    }
+
+    @Override
+    public void addRxBindingSubscribe(Disposable disposable) {
+        addSubscribe(disposable);
     }
 
     @Override

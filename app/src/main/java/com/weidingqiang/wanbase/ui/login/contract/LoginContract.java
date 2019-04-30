@@ -1,5 +1,6 @@
 package com.weidingqiang.wanbase.ui.login.contract;
 
+import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.weidingqiang.rxqwelibrary.base.BasePresenter;
 import com.weidingqiang.rxqwelibrary.base.BaseView;
 
@@ -15,10 +16,14 @@ public interface LoginContract {
         void responeError(String errorMsg);
 
         void loginSuccess();
+
+        void shareEventSuccess();
     }
 
     interface Presenter extends BasePresenter<View> {
         //登陆
         void login(String loginName, String password);
+
+        void shareEventPermissionVerify(RxPermissions rxPermissions);
     }
 }

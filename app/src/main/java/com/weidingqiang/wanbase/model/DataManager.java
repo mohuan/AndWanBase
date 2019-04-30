@@ -30,6 +30,17 @@ public class DataManager implements HttpHelper, PreferencesHelper {
     }
 
     @Override
+    public void setLoginStatus(boolean isLogin) {
+        mPreferencesHelper.setLoginStatus(isLogin);
+    }
+
+    @Override
+    public boolean getLoginStatus() {
+        return mPreferencesHelper.getLoginStatus();
+    }
+
+
+    @Override
     public boolean getNightModeState() {
         return false;
     }

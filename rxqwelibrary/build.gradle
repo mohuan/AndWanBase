@@ -76,6 +76,7 @@ dependencies {
     api rootProject.ext.dependencies["converter-fastjson-android"]
     api rootProject.ext.dependencies["adapter-rxjava2"]
     api rootProject.ext.dependencies["rxpermissions"]
+    api rootProject.ext.dependencies["rxbinding"]
     //cook持久化管理
     api rootProject.ext.dependencies["PersistentCookieJar"]
 
