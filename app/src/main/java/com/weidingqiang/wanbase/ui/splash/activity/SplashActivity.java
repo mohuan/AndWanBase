@@ -27,9 +27,6 @@ import cn.bingoogolapple.bgabanner.BGALocalImageSize;
 
 /**
  * 1.路由
- * 2.下载        要     11
- * 3.升级        要     10
- * 4.上传图片   要     12
  * 5.音频
  * 6.视频
  * 7.全面屏
@@ -55,6 +52,8 @@ import cn.bingoogolapple.bgabanner.BGALocalImageSize;
  * 16.列表
  * 17.图片加载 圆角图片
  * 18.弹框
+ * 19.下载
+ * 20.升级app
  */
 
 public class SplashActivity extends RootActivity<SplashPresenter> implements SplashContract.View {

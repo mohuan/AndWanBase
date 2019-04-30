@@ -52,6 +52,7 @@ dependencies {
     api rootProject.ext.dependencies["utilcodex"]
     api rootProject.ext.dependencies["logger"]
     api rootProject.ext.dependencies["dialogplus"]
+    api rootProject.ext.dependencies["checkVersionLib"]
 
     //显示图片框架
     api rootProject.ext.dependencies["autolayout"]

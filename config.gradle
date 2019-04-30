@@ -57,7 +57,14 @@ ext{
 //            "glide_compiler"                    : "com.github.bumptech.glide:compiler:${version["glideVersion"]}",
             //动态domain
             "retrofit-url-manager"              : "me.jessyan:retrofit-url-manager:1.4.0",
-            "PersistentCookieJar"               :"com.github.franmontiel:PersistentCookieJar:v1.0.1",
+            "PersistentCookieJar"               : "com.github.franmontiel:PersistentCookieJar:v1.0.1",
+            //下载
+            //https://github.com/AriaLyy/Aria
+            "aria-core"                         : "com.arialyy.aria:aria-core:3.6.3",
+            "aria-compiler"                     : "com.arialyy.aria:aria-compiler:3.6.3",
+            // https://github.com/AlexLiuSheng/CheckVersionLib
+            // 升级
+            "checkVersionLib"                   : "com.allenliu.versionchecklib:library:2.2.0",
             //dao
 
             //rx

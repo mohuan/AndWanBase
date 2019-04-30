@@ -179,6 +179,8 @@ dependencies {
     implementation rootProject.ext.dependencies["walle"]
     implementation project(':rxqwelibrary')
 
+    implementation rootProject.ext.dependencies["aria-core"]
+    annotationProcessor rootProject.ext.dependencies["aria-compiler"]
 }
 
 walle {

@@ -10,6 +10,7 @@ import com.weidingqiang.wanbase.R;
 import com.weidingqiang.wanbase.base.BaseFragmentActivity;
 import com.weidingqiang.wanbase.ui.main.contract.MainContract;
 import com.weidingqiang.wanbase.ui.main.fragment.DialogFragment;
+import com.weidingqiang.wanbase.ui.main.fragment.DownUpFragment;
 import com.weidingqiang.wanbase.ui.main.fragment.NewsFragment;
 import com.weidingqiang.wanbase.ui.main.fragment.RoundImageFragment;
 import com.weidingqiang.wanbase.ui.main.presenter.MainPresenter;
@@ -42,7 +43,7 @@ public class MainActivity extends BaseFragmentActivity<MainPresenter> implements
             mFragments[FIRST] = NewsFragment.newInstance();
             mFragments[SECOND] = RoundImageFragment.newInstance();
             mFragments[THIRD] = DialogFragment.newInstance();
-            mFragments[FOUR] = NewsFragment.newInstance();
+            mFragments[FOUR] = DownUpFragment.newInstance();
 
             loadMultipleRootFragment(R.id.fl_tab_container, FIRST,
                     mFragments[FIRST], mFragments[SECOND], mFragments[THIRD],mFragments[FOUR]);
@@ -53,7 +54,7 @@ public class MainActivity extends BaseFragmentActivity<MainPresenter> implements
             mFragments[FIRST] = firstFragment;
             mFragments[SECOND] = findFragment(RoundImageFragment.class);
             mFragments[THIRD] = findFragment(DialogFragment.class);
-            mFragments[FOUR] = findFragment(NewsFragment.class);
+            mFragments[FOUR] = findFragment(DownUpFragment.class);
         }
 
         initView();
