@@ -57,7 +57,7 @@ dependencies {
     //显示图片框架
     api rootProject.ext.dependencies["autosize"]
     api rootProject.ext.dependencies["glide"]
-//    api rootProject.ext.dependencies["glide_compiler"]
+    annotationProcessor rootProject.ext.dependencies["glide_compiler"]
 
     //fragment 管控
     //https://github.com/YoKeyword/Fragmentation/blob/master/README_CN.md

@@ -4,12 +4,10 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.weidingqiang.wanbase.R;
 import com.weidingqiang.wanbase.base.RootFragment;
 import com.weidingqiang.wanbase.ui.main.contract.RoundImageContract;
 import com.weidingqiang.wanbase.ui.main.presenter.RoundImagePresenter;
-import com.weidingqiang.wanbase.widget.glide.GlideRoundTransform;
 
 import butterknife.BindView;
 
@@ -44,7 +42,7 @@ public class RoundImageFragment extends RootFragment<RoundImagePresenter> implem
         Glide.with(mContext)
                 .load("https://www.wanandroid.com/blogimgs/50c115c2-cf6c-4802-aa7b-a4334de444cd.png")
                 .centerCrop()
-                .transform(new CenterCrop(mContext), new GlideRoundTransform(mContext, 10))
+//                .transform(new CenterCrop(mContext), new GlideRoundTransform(mContext, 10))
                 .into(round_image);
     }
 
