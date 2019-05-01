@@ -57,10 +57,7 @@ import cn.bingoogolapple.bgabanner.BGALocalImageSize;
 
 /**
  * 待完成事项，继续升级框架
- * 1.采用autosize
- * 2.升级rxjava等版本
- * 3.glide版本
- * 4.新增mvvm框架
+ * 1.新增mvvm框架
  */
 
 public class SplashActivity extends RootActivity<SplashPresenter> implements SplashContract.View {
