@@ -3,14 +3,11 @@ package com.weidingqiang.rxqwelibrary.base;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.umeng.analytics.MobclickAgent;
 import com.weidingqiang.rxqwelibrary.managers.AppManagers;
-import com.zhy.autolayout.AutoFrameLayout;
-import com.zhy.autolayout.AutoLayoutActivity;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -20,7 +17,7 @@ import butterknife.Unbinder;
  * 邮箱：dqwei@iflytek.com
  */
 
-public abstract class SimpleActivity extends AutoLayoutActivity{
+public abstract class SimpleActivity extends AppCompatActivity {
 
     //退出事件
     private long exitTime = 0;

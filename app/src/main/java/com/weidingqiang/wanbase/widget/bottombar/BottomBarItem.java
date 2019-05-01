@@ -7,17 +7,17 @@ import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.weidingqiang.wanbase.R;
-import com.zhy.autolayout.AutoLinearLayout;
 
 /**
  * 作者：weidingqiang on 2018/12/15 10:55
  * 邮箱：weidingqiang@163.com
  */
 
-public class BottomBarItem  extends AutoLinearLayout {
+public class BottomBarItem  extends LinearLayout {
     private ImageView mIcon;
     private TextView mTvTitle;
     private Context mContext;

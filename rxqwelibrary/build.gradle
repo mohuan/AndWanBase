@@ -55,7 +55,7 @@ dependencies {
     api rootProject.ext.dependencies["checkVersionLib"]
 
     //显示图片框架
-    api rootProject.ext.dependencies["autolayout"]
+    api rootProject.ext.dependencies["autosize"]
     api rootProject.ext.dependencies["glide"]
 //    api rootProject.ext.dependencies["glide_compiler"]
 

@@ -4,9 +4,9 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.weidingqiang.wanbase.R;
-import com.zhy.autolayout.AutoLinearLayout;
 
 import java.util.ArrayList;
 
@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * 底部导航
  */
 
-public class BottomBar extends AutoLinearLayout implements View.OnClickListener{
+public class BottomBar extends LinearLayout implements View.OnClickListener{
 
     private BottomBarItem bottom_bar_capital;
 

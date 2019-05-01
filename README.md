@@ -1,9 +1,10 @@
 # AndWanBase
 采用 Rxjava2+retrofit2+okhttp3+dagger2<br/>
+AutoSize适配
 ```
  * 已存在的功能
  * 1.log
- * 2.autolayout 适配
+ * 2.AutoSize 适配
  * 3.qmui皮肤
  * 4.bga欢迎页面
  * 5.多状态

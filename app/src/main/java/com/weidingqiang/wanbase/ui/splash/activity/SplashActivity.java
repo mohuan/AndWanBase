@@ -27,9 +27,8 @@ import cn.bingoogolapple.bgabanner.BGALocalImageSize;
 
 /**
  * 1.路由
- * 5.音频
- * 6.视频
- * 7.全面屏
+ * 2.音频
+ * 3.视频
  */
 
 /**
@@ -54,6 +53,14 @@ import cn.bingoogolapple.bgabanner.BGALocalImageSize;
  * 18.弹框
  * 19.下载
  * 20.升级app
+ */
+
+/**
+ * 待完成事项，继续升级框架
+ * 1.采用autosize
+ * 2.升级rxjava等版本
+ * 3.glide版本
+ * 4.新增mvvm框架
  */
 
 public class SplashActivity extends RootActivity<SplashPresenter> implements SplashContract.View {

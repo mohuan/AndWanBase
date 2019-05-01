@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoLinearLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -8,17 +8,17 @@
     android:layout_gravity="center_horizontal"
     >
 
-    <com.zhy.autolayout.AutoFrameLayout
+    <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/mIcon"
-            android:layout_width="46px"
-            android:layout_height="46px"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
             android:src="@drawable/icon_bar_im_selected"
             />
         <TextView
-            android:layout_marginLeft="40px"
+            android:layout_marginStart="10dp"
             android:id="@+id/unMsg_tv"
             android:layout_width="30px"
             android:layout_height="30px"
@@ -28,10 +28,10 @@
             android:background="@drawable/bottom_circle_bg"
             android:text="1"
             />
-    </com.zhy.autolayout.AutoFrameLayout>
+    </FrameLayout>
 
     <TextView
-        android:layout_marginTop="12px"
+        android:layout_marginTop="4dp"
         android:id="@+id/mTvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,4 +39,4 @@
         android:text="客服"
         />
 
-</com.zhy.autolayout.AutoLinearLayout>
+</LinearLayout>

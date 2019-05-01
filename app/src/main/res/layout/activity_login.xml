@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoLinearLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,26 +8,27 @@
     android:orientation="vertical"
     >
 
-    <com.zhy.autolayout.AutoLinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="112px"
+        android:layout_height="40dp"
         android:orientation="horizontal"
-        android:layout_marginLeft="70px"
-        android:layout_marginRight="70px"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         android:background="@drawable/login_edit_bg"
+        android:layout_marginTop="176dp"
         >
         <ImageView
-            android:layout_marginLeft="28px"
-            android:layout_width="46px"
-            android:layout_height="46px"
+            android:layout_marginStart="11dp"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
             android:src="@drawable/icon_header"
             android:layout_gravity="center_vertical"
             />
 
         <EditText
             android:id="@+id/username_edit"
-            android:layout_marginRight="28px"
-            android:layout_marginLeft="28px"
+            android:layout_marginRight="11dp"
+            android:layout_marginLeft="11dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -40,30 +41,30 @@
             />
 
 
-    </com.zhy.autolayout.AutoLinearLayout>
+    </LinearLayout>
 
-    <com.zhy.autolayout.AutoLinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="112px"
+        android:layout_height="40dp"
         android:orientation="horizontal"
-        android:layout_marginLeft="70px"
-        android:layout_marginRight="70px"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         android:background="@drawable/login_edit_bg"
-        android:layout_marginTop="86px"
+        android:layout_marginTop="30dp"
         >
 
         <ImageView
-            android:layout_marginLeft="28px"
-            android:layout_width="46px"
-            android:layout_height="46px"
+            android:layout_marginStart="11dp"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
             android:src="@drawable/icon_lock"
             android:layout_gravity="center_vertical"
             />
 
         <EditText
             android:id="@+id/password_edit"
-            android:layout_marginRight="28px"
-            android:layout_marginLeft="28px"
+            android:layout_marginRight="11dp"
+            android:layout_marginLeft="11dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -77,13 +78,13 @@
             />
 
 
-    </com.zhy.autolayout.AutoLinearLayout>
+    </LinearLayout>
 
 
     <Button
-        android:layout_marginLeft="70px"
-        android:layout_marginRight="70px"
-        android:layout_marginTop="80px"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="40dp"
         android:id="@+id/login_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -92,9 +93,9 @@
         />
 
     <Button
-        android:layout_marginLeft="70px"
-        android:layout_marginRight="70px"
-        android:layout_marginTop="80px"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="40dp"
         android:id="@+id/permiss_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -103,4 +104,4 @@
         />
 
 
-</com.zhy.autolayout.AutoLinearLayout>
+</LinearLayout>

@@ -8,22 +8,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewStub;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.ObjectUtils;
 import com.weidingqiang.wanbase.R;
-import com.zhy.autolayout.AutoLinearLayout;
-import com.zhy.autolayout.AutoRelativeLayout;
 
 /**
  * @FileName: XBaseTopBar
  * @author: weidingqiang
  * @data: 2016-10-18
  */
-public class XBaseTopBar extends AutoRelativeLayout implements View.OnClickListener{
+public class XBaseTopBar extends RelativeLayout implements View.OnClickListener{
 
     //根布局
-    protected AutoRelativeLayout rlayout_topbar_root;
+    protected RelativeLayout rlayout_topbar_root;
 
     //左侧组件
     protected ImageView img_topbar_left;
@@ -49,7 +49,7 @@ public class XBaseTopBar extends AutoRelativeLayout implements View.OnClickListe
     //通过ViewStub加载的组件
     protected View stubView;
 
-    private AutoLinearLayout middle_layout;
+    private LinearLayout middle_layout;
 
     public void setxBaseTopBarImp(XBaseTopBarImp xBaseTopBarImp) {
         this.xBaseTopBarImp = xBaseTopBarImp;
@@ -89,7 +89,7 @@ public class XBaseTopBar extends AutoRelativeLayout implements View.OnClickListe
         txt_topbar_name = (TextView) this.findViewById(R.id.txt_topbar_name);
         img_topbar_left = (ImageView) this.findViewById(R.id.img_topbar_left);
         stub_right = (ViewStub) this.findViewById(R.id.stub_right);
-        rlayout_topbar_root = (AutoRelativeLayout) this.findViewById(R.id.rlayout_topbar_root);
+        rlayout_topbar_root = (RelativeLayout) this.findViewById(R.id.rlayout_topbar_root);
         img_topbar_left.setOnClickListener(this);
         stub_right.setOnClickListener(this);
         txt_topbar_name.setText(middleText);

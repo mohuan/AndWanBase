@@ -6,7 +6,7 @@
     android:background="@color/black029"
     >
 
-    <com.zhy.autolayout.AutoLinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -29,6 +29,6 @@
             android:layout_weight="1"
             />
 
-    </com.zhy.autolayout.AutoLinearLayout>
+    </LinearLayout>
 
 </FrameLayout>
