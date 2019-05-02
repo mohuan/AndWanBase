@@ -2,6 +2,7 @@ package com.weidingqiang.wanbase.ui.help.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
 import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
@@ -11,6 +12,8 @@ import android.webkit.WebViewClient;
 
 import com.weidingqiang.wanbase.R;
 import com.weidingqiang.wanbase.base.RootActivity;
+import com.weidingqiang.wanbase.databinding.ActivityHelpBinding;
+import com.weidingqiang.wanbase.model.bean.HelpVO;
 import com.weidingqiang.wanbase.ui.help.contract.HelpContract;
 import com.weidingqiang.wanbase.ui.help.presenter.HelpPresenter;
 import com.weidingqiang.wanbase.widget.actionbar.XBaseTopBar;
@@ -59,6 +62,14 @@ public class HelpActivity extends RootActivity<HelpPresenter> implements HelpCon
 
     @Override
     protected void initEventAndData() {
+
+        //https://www.jianshu.com/p/2c4ac24761f5
+        //DataBinding 说明
+        ActivityHelpBinding binding = DataBindingUtil.setContentView(this,R.layout.activity_help);
+        HelpVO helpVO = new HelpVO("帮助","qasd");
+        binding.setHelpVO(helpVO);
+
+
         main_topbar.setxBaseTopBarImp(this);
 
         url = getIntent().getStringExtra("url");

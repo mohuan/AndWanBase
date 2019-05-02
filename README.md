@@ -1,6 +1,7 @@
 # AndWanBase
 采用 Rxjava2+retrofit2+okhttp3+dagger2<br/>
 AutoSize适配
+DataBinding
 ```
  * 已存在的功能
  * 1.log

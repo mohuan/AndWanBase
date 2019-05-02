@@ -1,27 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <com.weidingqiang.wanbase.widget.actionbar.XBaseTopBar
-        android:id="@+id/main_topbar"
+    <data>
+        <variable
+            name="helpVO"
+            type="com.weidingqiang.wanbase.model.bean.HelpVO" />
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/bar_height"
-        app:isShowLeft_x="true"
-        app:isShowRight_x="false"
-        app:middleText_x=""
-        />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <WebView
-        android:id="@+id/webView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        />
+        <com.weidingqiang.wanbase.widget.actionbar.XBaseTopBar
+            android:id="@+id/main_topbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bar_height"
+            app:isShowLeft_x="true"
+            app:isShowRight_x="false"
+            app:middleText_x="" />
 
-</LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{helpVO.name}"
+            />
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+</layout>
