@@ -1,6 +1,5 @@
 package com.weidingqiang.wanbase.model;
 
-import com.weidingqiang.wanbase.model.bean.FeedArticleListData;
 import com.weidingqiang.wanbase.model.bean.UserVO;
 import com.weidingqiang.wanbase.model.http.HttpHelper;
 import com.weidingqiang.wanbase.model.http.response.HttpResponse;
@@ -28,11 +27,6 @@ public class DataManager implements HttpHelper, PreferencesHelper {
     @Override
     public Flowable<HttpResponse<UserVO>> postLogin(String username, String password) {
         return mHttpHelper.postLogin(username, password);
-    }
-
-    @Override
-    public Flowable<HttpResponse<FeedArticleListData>> getFeedArticleList(int num) {
-        return mHttpHelper.getFeedArticleList(num);
     }
 
     @Override

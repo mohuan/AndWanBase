@@ -4,9 +4,6 @@ import android.app.Activity;
 
 import com.weidingqiang.wanbase.di.module.ActivityModule;
 import com.weidingqiang.wanbase.di.scope.ActivityScope;
-import com.weidingqiang.wanbase.ui.help.activity.HelpActivity;
-import com.weidingqiang.wanbase.ui.login.activity.LoginActivity;
-import com.weidingqiang.wanbase.ui.main.activity.MainActivity;
 import com.weidingqiang.wanbase.ui.splash.activity.SplashActivity;
 
 import dagger.Component;
@@ -20,12 +17,6 @@ import dagger.Component;
 public interface ActivityComponent {
 
     Activity getActivity();
-
-    void inject(MainActivity mainActivity);
-
-    void inject(LoginActivity loginActivity);
-
-    void inject(HelpActivity helpActivity);
 
     void inject(SplashActivity splashActivity);
 }

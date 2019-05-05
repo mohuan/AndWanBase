@@ -1,6 +1,5 @@
 package com.weidingqiang.wanbase.model.http.api;
 
-import com.weidingqiang.wanbase.model.bean.FeedArticleListData;
 import com.weidingqiang.wanbase.model.bean.UserVO;
 import com.weidingqiang.wanbase.model.http.response.HttpResponse;
 

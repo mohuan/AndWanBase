@@ -1,6 +1,5 @@
 package com.weidingqiang.wanbase.model.http;
 
-import com.weidingqiang.wanbase.model.bean.FeedArticleListData;
 import com.weidingqiang.wanbase.model.bean.UserVO;
 import com.weidingqiang.wanbase.model.http.api.QBaseApis;
 import com.weidingqiang.wanbase.model.http.response.HttpResponse;
@@ -25,8 +24,4 @@ public class RetrofitHelper implements HttpHelper {
         return qBaseApis.postLogin(username, password);
     }
 
-    @Override
-    public Flowable<HttpResponse<FeedArticleListData>> getFeedArticleList(int num) {
-        return qBaseApis.getFeedArticleList(num);
-    }
 }

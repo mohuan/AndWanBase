@@ -12,8 +12,6 @@ import android.widget.RelativeLayout;
 
 import com.weidingqiang.wanbase.R;
 import com.weidingqiang.wanbase.base.RootActivity;
-import com.weidingqiang.wanbase.ui.login.activity.LoginActivity;
-import com.weidingqiang.wanbase.ui.main.activity.MainActivity;
 import com.weidingqiang.wanbase.ui.splash.contract.SplashContract;
 import com.weidingqiang.wanbase.ui.splash.presenter.SplashPresenter;
 
@@ -177,12 +175,12 @@ public class SplashActivity extends RootActivity<SplashPresenter> implements Spl
     private void initApp(Animation animation){
         if(mPresenter.isLogin())
         {
-            startActivity(MainActivity.newInstance(getApplicationContext()));
+//            startActivity(MainActivity.newInstance(getApplicationContext()));
         }
         else{
-            startActivity(LoginActivity.newInstance(getApplicationContext()));
+//            startActivity(LoginActivity.newInstance(getApplicationContext()));
         }
-        finish();
+//        finish();
     }
 
     @Override
