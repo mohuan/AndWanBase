@@ -67,6 +67,11 @@ ext{
             "checkVersionLib"                   : "com.allenliu.versionchecklib:library:2.2.0",
             //dao
 
+            //audio
+            // https://github.com/zhaolewei/ZlwAudioRecorder
+            // AudioRecorder: Android 录音及录音可视化相关lib,支持pcm、wav、mp3音频的录制  待验证
+            "ZlwAudioRecorder"                  : "com.github.zhaolewei:ZlwAudioRecorder:1.0.5",
+
             //rx
             "rxjava"                            : "io.reactivex.rxjava2:rxjava:2.2.8",
             "rxandroid"                         : "io.reactivex.rxjava2:rxandroid:2.1.1",
