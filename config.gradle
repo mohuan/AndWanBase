@@ -21,6 +21,9 @@ ext{
     ]
 
     dependencies=[
+            //待验证
+//            WebSocket  https://github.com/0xZhangKe/WebSocketDemo
+
             //https://github.com/JsonChao/Awesome-WanAndroid/blob/master/config.gradle
             //base
             "appcompat-v7"                      : "com.android.support:appcompat-v7:${version["supportLibraryVersion"]}",
