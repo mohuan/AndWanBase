@@ -1,9 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeActivity">
+    tools:context=".ui.home.HomeActivity"
+    android:orientation="vertical"
+    >
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="30dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="创维家校通1"
+            android:textColor="@drawable/selector_tab_font_color1"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="创维家校通1"
+            android:textColor="@drawable/selector_tab_font_color1"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="创维家校通2"
+            android:textColor="@drawable/selector_tab_font_color1"
+            android:textSize="20sp"
+            />
+
+    </LinearLayout>
+
+    <com.owen.tab.TvTabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/actionbar_color"
+        app:tabIndicatorResId="@color/green_bright"
+        app:tabIndicatorGravity="bottom"
+        app:tabIndicatorHeight="4dp"
+        app:tabIndicatorWidth="100dp"
+        app:tabGravity="center"
+        app:tabTexSize="24pt"
+        app:tabTextColor="@drawable/selector_tab_font_color"
+        app:tabTextSelectedScale="1.15"
+        app:tabMinWidth="160pt"
+        app:tabScrollMode="fixed"/>
+
+    <com.owen.widget.TvViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="60dp"/>
+
+
+
+</LinearLayout>

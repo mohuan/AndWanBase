@@ -5,6 +5,10 @@ import android.app.Activity;
 import com.weidingqiang.wanbase.di.module.FragmentModule;
 import com.weidingqiang.wanbase.di.scope.FragmentScope;
 import com.weidingqiang.wanbase.ui.help.fragment.HelpInfoFragment;
+import com.weidingqiang.wanbase.ui.home.HomeFragment;
+import com.weidingqiang.wanbase.ui.home.HomeFragment2;
+import com.weidingqiang.wanbase.ui.home.HomeFragment3;
+import com.weidingqiang.wanbase.ui.home.HomeFragment4;
 import com.weidingqiang.wanbase.ui.main.fragment.DialogFragment;
 import com.weidingqiang.wanbase.ui.main.fragment.DownUpFragment;
 import com.weidingqiang.wanbase.ui.main.fragment.NewsFragment;
@@ -32,4 +36,11 @@ public interface FragmentComponent {
 
     void inject(DownUpFragment downUpFragment);
 
+    void inject(HomeFragment homeFragment);
+
+    void inject(HomeFragment2 homeFragment2);
+
+    void inject(HomeFragment3 homeFragment3);
+
+    void inject(HomeFragment4 homeFragment4);
 }

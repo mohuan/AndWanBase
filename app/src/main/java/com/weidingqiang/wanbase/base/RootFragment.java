@@ -1,11 +1,14 @@
 package com.weidingqiang.wanbase.base;
 
+import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.owen.focus.FocusBorder;
 import com.weidingqiang.rxqwelibrary.base.BasePresenter;
 import com.weidingqiang.rxqwelibrary.widget.ProgressImageView;
 import com.weidingqiang.wanbase.R;
+import com.weidingqiang.wanbase.ui.home.HomeFragment;
 
 /**
  * @author: weidingqiang
@@ -142,7 +145,34 @@ public abstract class RootFragment<T extends BasePresenter> extends BaseFragment
         }
     }
 
+    protected FocusBorder mFocusBorder;
+
     public void setErrorResource(int errorLayoutResource) {
         this.mErrorResource = errorLayoutResource;
+    }
+
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if(getActivity() instanceof HomeFragment.FocusBorderHelper) {
+            mFocusBorder = ((HomeFragment.FocusBorderHelper)getActivity()).getFocusBorder();
+        }
+    }
+
+    public interface FocusBorderHelper {
+        FocusBorder getFocusBorder();
+    }
+
+    protected void onMoveFocusBorder(View focusedView, float scale) {
+        if(null != mFocusBorder) {
+            mFocusBorder.onFocus(focusedView, FocusBorder.OptionsFactory.get(scale, scale));
+        }
+    }
+
+    protected void onMoveFocusBorder(View focusedView, float scale, float roundRadius) {
+        if(null != mFocusBorder) {
+            mFocusBorder.onFocus(focusedView, FocusBorder.OptionsFactory.get(scale, scale, roundRadius));
+        }
     }
 }
