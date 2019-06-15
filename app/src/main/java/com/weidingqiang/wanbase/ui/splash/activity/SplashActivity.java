@@ -12,6 +12,7 @@ import android.widget.RelativeLayout;
 
 import com.weidingqiang.wanbase.R;
 import com.weidingqiang.wanbase.base.RootActivity;
+import com.weidingqiang.wanbase.ui.home.HomeActivity;
 import com.weidingqiang.wanbase.ui.login.activity.LoginActivity;
 import com.weidingqiang.wanbase.ui.main.activity.MainActivity;
 import com.weidingqiang.wanbase.ui.splash.contract.SplashContract;
@@ -96,46 +97,50 @@ public class SplashActivity extends RootActivity<SplashPresenter> implements Spl
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        //第二次进入跳转
+        welcome_bg.setVisibility(View.VISIBLE);
+
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.app_start_anim);
+        animation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+            //动画完成
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                initApp(animation);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        welcome_bg.setAnimation(animation);
+
+
+
         //判断第一次进入
-        SharedPreferences shared=getSharedPreferences("is", MODE_PRIVATE);
-        boolean isfer=shared.getBoolean("isfer", true);
-//        boolean isfer = true;
-        SharedPreferences.Editor editor=shared.edit();
-        if(isfer){
-            //第一次
-
-            editor.putBoolean("isfer", false);
-            editor.commit();
-
-            banner_guide.setVisibility(View.VISIBLE);
-            welcome_bg.setVisibility(View.GONE);
-
-            setListener();
-            processLogic();
-        }
-        else {
-            //第二次进入跳转
-            welcome_bg.setVisibility(View.VISIBLE);
-
-            Animation animation = AnimationUtils.loadAnimation(this, R.anim.app_start_anim);
-            animation.setAnimationListener(new Animation.AnimationListener() {
-                @Override
-                public void onAnimationStart(Animation animation) {
-
-                }
-                //动画完成
-                @Override
-                public void onAnimationEnd(Animation animation) {
-                    initApp(animation);
-                }
-
-                @Override
-                public void onAnimationRepeat(Animation animation) {
-
-                }
-            });
-            welcome_bg.setAnimation(animation);
-        }
+//        SharedPreferences shared=getSharedPreferences("is", MODE_PRIVATE);
+//        boolean isfer=shared.getBoolean("isfer", true);
+////        boolean isfer = true;
+//        SharedPreferences.Editor editor=shared.edit();
+//        if(isfer){
+//            //第一次
+//
+//            editor.putBoolean("isfer", false);
+//            editor.commit();
+//
+//            banner_guide.setVisibility(View.VISIBLE);
+//            welcome_bg.setVisibility(View.GONE);
+//
+//            setListener();
+//            processLogic();
+//        }
+//        else {
+//
+//        }
     }
 
     @Override
@@ -163,25 +168,29 @@ public class SplashActivity extends RootActivity<SplashPresenter> implements Spl
         // Bitmap 的宽高在 maxWidth maxHeight 和 minWidth minHeight 之间
         BGALocalImageSize localImageSize = new BGALocalImageSize(720, 1280, 320, 640);
         // 设置数据源
-        mBackgroundBanner.setData(localImageSize, ImageView.ScaleType.CENTER_CROP,
-                R.drawable.uoko_guide_background_1,
-                R.drawable.uoko_guide_background_2,
-                R.drawable.uoko_guide_background_3);
-
-        mForegroundBanner.setData(localImageSize, ImageView.ScaleType.CENTER_CROP,
-                R.drawable.uoko_guide_foreground_1,
-                R.drawable.uoko_guide_foreground_2,
-                R.drawable.uoko_guide_foreground_3);
+//        mBackgroundBanner.setData(localImageSize, ImageView.ScaleType.CENTER_CROP,
+//                R.drawable.uoko_guide_background_1,
+//                R.drawable.uoko_guide_background_2,
+//                R.drawable.uoko_guide_background_3);
+//
+//        mForegroundBanner.setData(localImageSize, ImageView.ScaleType.CENTER_CROP,
+//                R.drawable.uoko_guide_foreground_1,
+//                R.drawable.uoko_guide_foreground_2,
+//                R.drawable.uoko_guide_foreground_3);
     }
 
     private void initApp(Animation animation){
-        if(mPresenter.isLogin())
-        {
-            startActivity(MainActivity.newInstance(getApplicationContext()));
-        }
-        else{
-            startActivity(LoginActivity.newInstance(getApplicationContext()));
-        }
+
+
+        startActivity(HomeActivity.newInstance(getApplicationContext()));
+
+//        if(mPresenter.isLogin())
+//        {
+//            startActivity(MainActivity.newInstance(getApplicationContext()));
+//        }
+//        else{
+//            startActivity(LoginActivity.newInstance(getApplicationContext()));
+//        }
         finish();
     }
 

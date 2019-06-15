@@ -5,6 +5,7 @@ import android.app.Activity;
 import com.weidingqiang.wanbase.di.module.ActivityModule;
 import com.weidingqiang.wanbase.di.scope.ActivityScope;
 import com.weidingqiang.wanbase.ui.help.activity.HelpActivity;
+import com.weidingqiang.wanbase.ui.home.HomeActivity;
 import com.weidingqiang.wanbase.ui.login.activity.LoginActivity;
 import com.weidingqiang.wanbase.ui.main.activity.MainActivity;
 import com.weidingqiang.wanbase.ui.splash.activity.SplashActivity;
@@ -28,4 +29,6 @@ public interface ActivityComponent {
     void inject(HelpActivity helpActivity);
 
     void inject(SplashActivity splashActivity);
+
+    void inject(HomeActivity homeActivity);
 }

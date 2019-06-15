@@ -12,43 +12,36 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.home.HomeActivity"></activity>
 
         <meta-data
             android:name="design_width_in_dp"
-            android:value="375"/>
+            android:value="1920" />
         <meta-data
             android:name="design_height_in_dp"
-            android:value="667"/>
-
-        <!-- 欢迎页面 -->
+            android:value="1080" /> <!-- 欢迎页面 -->
         <activity
             android:name=".ui.splash.activity.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!--首页-->
+        </activity> <!-- 首页 -->
         <activity
             android:name=".ui.main.activity.MainActivity"
-            android:screenOrientation="portrait"/>
-
-        <!--登录-->
+            android:screenOrientation="portrait" /> <!-- 登录 -->
         <activity
             android:name=".ui.login.activity.LoginActivity"
-            android:screenOrientation="portrait"/>
-
-        <!-- 初始化service -->
+            android:screenOrientation="portrait" /> <!-- 初始化service -->
         <service
             android:name="com.weidingqiang.rxqwelibrary.service.InitializeService"
             android:enabled="true"
             android:exported="false" />
 
         <activity android:name=".ui.help.activity.HelpActivity" />
-
     </application>
 
 </manifest>
