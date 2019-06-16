@@ -189,6 +189,9 @@ dependencies {
     implementation 'com.owen:tv-widget:1.0.1'
     implementation 'com.owen:tv-focusborder:1.0.8'
     implementation 'com.owen:tv-recyclerview:2.0.3'
+
+    implementation 'com.hyman:flowlayout-lib:1.1.2'
+    implementation 'cn.jzvd:jiaozivideoplayer:7.0.4'
 }
 
 walle {

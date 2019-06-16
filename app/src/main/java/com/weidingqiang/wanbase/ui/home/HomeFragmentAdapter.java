@@ -20,7 +20,10 @@ public class HomeFragmentAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         if (position == 0) {
-            return HomeFragment.newInstance();
+//            return  HomeFragment2.newInstance();
+//            return HomeFragment3.newInstance();
+            return HomeFragment4.newInstance();
+//            return HomeFragment.newInstance();
         } else if (position == 1) {
             return HomeFragment2.newInstance();
         } else if(position ==3){

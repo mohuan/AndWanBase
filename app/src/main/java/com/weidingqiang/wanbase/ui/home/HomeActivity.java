@@ -43,9 +43,11 @@ public class HomeActivity extends RootFragmentActivity<HelpPresenter> implements
     private FocusBorder mFocusBorder;
 
     private final String[] tabNames = {
-            "热门推荐", "在线试题", "录播课堂",
-            "作业查看"
+            "热门推荐"
     };
+
+//    , "在线试题", "录播课堂",
+//            "作业查看"
 
     @Override
     protected void initInject() {
@@ -71,7 +73,6 @@ public class HomeActivity extends RootFragmentActivity<HelpPresenter> implements
     protected void initEventAndData() {
 //        super.initEventAndData();
 
-        mTabLayout.addOnTabSelectedListener(new TabSelectedListener());
         for(String tabName : tabNames) {
             mTabLayout.addTab(mTabLayout.newTab().setText(tabName));
         }
@@ -116,39 +117,6 @@ public class HomeActivity extends RootFragmentActivity<HelpPresenter> implements
         return TypedValue.applyDimension(
                 TypedValue.COMPLEX_UNIT_DIP, dp, getResources().getDisplayMetrics());
     }
-
-    public class TabSelectedListener implements TvTabLayout.OnTabSelectedListener {
-        private Fragment mFragment;
-
-        @Override
-        public void onTabSelected(TvTabLayout.Tab tab) {
-//            final int position = tab.getPosition();
-//            mFragment = getSupportFragmentManager().findFragmentByTag(position + "");
-//            FragmentTransaction mFt = getSupportFragmentManager().beginTransaction();
-//            if (mFragment == null) {
-//                mFragment = Fragment.instantiate(MainActivity.this, fragments[position]);
-//                mFt.add(R.id.content, mFragment, String.valueOf(position));
-//            } else {
-//                mFt.attach(mFragment);
-//            }
-//            mFt.commit();
-        }
-
-        @Override
-        public void onTabUnselected(TvTabLayout.Tab tab) {
-//            if (mFragment != null) {
-//                FragmentTransaction mFt = getSupportFragmentManager().beginTransaction();
-//                mFt.detach(mFragment);
-//                mFt.commit();
-//            }
-        }
-
-        @Override
-        public void onTabReselected(TvTabLayout.Tab tab) {
-
-        }
-    }
-
 
     //连续俩下 退出程序
     @Override
