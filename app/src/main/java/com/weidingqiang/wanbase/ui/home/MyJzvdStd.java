@@ -32,23 +32,36 @@ public class MyJzvdStd extends JzvdStd {
     @Override
     public void init(Context context) {
         super.init(context);
+
+//        fullscreenButton.setVisibility(INVISIBLE);
     }
 
     @Override
     public void onClick(View v) {
-        super.onClick(v);
-        seek();
+//        super.onClick(v);
         int i = v.getId();
         if (i == cn.jzvd.R.id.fullscreen) {
             Log.i(TAG, "onClick: fullscreen button");
         } else if (i == R.id.start) {
+
             Log.i(TAG, "onClick: start button");
         }
     }
 
-    public void seek(){
+    public void seek(int time){
+        startDismissControlViewTimer();
+        onClickUiToggle();
+        mediaInterface.seekTo(mediaInterface.getCurrentPosition()+time);
+    }
 
-        mediaInterface.seekTo(mediaInterface.getCurrentPosition()+10000);
+    public void pause(){
+        startDismissControlViewTimer();
+        onClickUiToggle();
+        if(mediaInterface.isPlaying()){
+            mediaInterface.pause();
+        }else {
+            mediaInterface.start();
+        }
     }
 
     @Override

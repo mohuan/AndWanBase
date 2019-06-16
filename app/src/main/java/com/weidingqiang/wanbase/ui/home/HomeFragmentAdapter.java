@@ -22,8 +22,8 @@ public class HomeFragmentAdapter extends FragmentPagerAdapter {
         if (position == 0) {
 //            return  HomeFragment2.newInstance();
 //            return HomeFragment3.newInstance();
-            return HomeFragment4.newInstance();
-//            return HomeFragment.newInstance();
+//            return HomeFragment4.newInstance();
+            return HomeFragment.newInstance();
         } else if (position == 1) {
             return HomeFragment2.newInstance();
         } else if(position ==3){

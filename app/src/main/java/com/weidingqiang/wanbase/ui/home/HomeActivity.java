@@ -43,7 +43,7 @@ public class HomeActivity extends RootFragmentActivity<HelpPresenter> implements
     private FocusBorder mFocusBorder;
 
     private final String[] tabNames = {
-            "热门推荐"
+            "热门推荐"   , "在线试题", "录播课堂", "作业查看"
     };
 
 //    , "在线试题", "录播课堂",

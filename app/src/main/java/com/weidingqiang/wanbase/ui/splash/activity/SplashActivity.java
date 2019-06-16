@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 import com.weidingqiang.wanbase.R;
 import com.weidingqiang.wanbase.base.RootActivity;
 import com.weidingqiang.wanbase.ui.home.HomeActivity;
+import com.weidingqiang.wanbase.ui.home.VideoActivity;
 import com.weidingqiang.wanbase.ui.login.activity.LoginActivity;
 import com.weidingqiang.wanbase.ui.main.activity.MainActivity;
 import com.weidingqiang.wanbase.ui.splash.contract.SplashContract;
@@ -183,6 +184,7 @@ public class SplashActivity extends RootActivity<SplashPresenter> implements Spl
 
 
         startActivity(HomeActivity.newInstance(getApplicationContext()));
+//        startActivity(VideoActivity.newInstance(getApplicationContext()));
 
 //        if(mPresenter.isLogin())
 //        {

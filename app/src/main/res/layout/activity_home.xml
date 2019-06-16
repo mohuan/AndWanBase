@@ -40,7 +40,6 @@
             android:text="创维家校通2"
             android:textColor="@drawable/selector_tab_font_color1"
             android:textSize="20sp"
-            android:focusable="true"
             />
 
     </LinearLayout>
