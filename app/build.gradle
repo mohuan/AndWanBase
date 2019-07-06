@@ -184,6 +184,8 @@ dependencies {
 
     implementation rootProject.ext.dependencies["aria-core"]
     annotationProcessor rootProject.ext.dependencies["aria-compiler"]
+
+    implementation rootProject.ext.dependencies["tangram"]
 }
 
 walle {

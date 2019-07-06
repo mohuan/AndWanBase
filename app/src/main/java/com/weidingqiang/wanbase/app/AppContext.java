@@ -2,8 +2,14 @@ package com.weidingqiang.wanbase.app;
 
 import android.app.ActivityManager;
 import android.content.Context;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.multidex.MultiDex;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.tmall.wireless.tangram.TangramBuilder;
+import com.tmall.wireless.tangram.util.IInnerImageSetter;
 import com.weidingqiang.rxqwelibrary.app.BaseApplication;
 import com.weidingqiang.rxqwelibrary.app.CrashHandler;
 import com.weidingqiang.rxqwelibrary.service.InitializeService;
@@ -39,6 +45,16 @@ public class AppContext extends BaseApplication {
         instance = this;
         //在子线程中完成其他初始化
         InitializeService.start(this);
+
+        //初始化通用图片加载器
+        TangramBuilder.init(this, new IInnerImageSetter() {
+            @Override
+            public <IMAGE extends ImageView> void doLoadImageUrl(@NonNull IMAGE view, @Nullable String url) {
+                Glide.with(getBaseContext())
+                        .load(url)
+                        .into(view);
+            }
+        },ImageView.class);
 
         //初始化崩溃信息
 //        initCrash();

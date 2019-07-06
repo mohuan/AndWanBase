@@ -57,7 +57,11 @@ import cn.bingoogolapple.bgabanner.BGALocalImageSize;
 
 /**
  * 待完成事项，继续升级框架
- * 1.新增mvvm框架
+ * 1.下载管理
+ * 2.腾讯X5打开office 和 视频页面
+ * 3.数据库  增删改查 升级
+ * 4.首页缓存
+ * 5.生命周期left
  */
 
 public class SplashActivity extends RootActivity<SplashPresenter> implements SplashContract.View {

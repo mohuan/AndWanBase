@@ -4,6 +4,8 @@ import android.app.Activity;
 
 import com.weidingqiang.wanbase.di.module.ActivityModule;
 import com.weidingqiang.wanbase.di.scope.ActivityScope;
+import com.weidingqiang.wanbase.ui.down.activity.DownActivity;
+import com.weidingqiang.wanbase.ui.down.activity.FileListActivity;
 import com.weidingqiang.wanbase.ui.help.activity.HelpActivity;
 import com.weidingqiang.wanbase.ui.login.activity.LoginActivity;
 import com.weidingqiang.wanbase.ui.main.activity.MainActivity;
@@ -28,4 +30,8 @@ public interface ActivityComponent {
     void inject(HelpActivity helpActivity);
 
     void inject(SplashActivity splashActivity);
+
+    void inject(DownActivity downActivity);
+
+    void inject(FileListActivity fileListActivity);
 }

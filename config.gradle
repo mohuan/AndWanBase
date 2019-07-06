@@ -32,6 +32,9 @@ ext{
             "design"                            : "com.android.support:design:${version["supportLibraryVersion"]}",
             "constraint"                        : "com.android.support.constraint:constraint-layout:1.1.3",
 
+            // 阿里 tangram
+            "tangram"                           : "com.alibaba.android:tangram:3.3.0",
+
             //ui
             "dialogplus"                        : "com.orhanobut:dialogplus:1.11@aar",
             "cptr"                              : "com.chanven.lib:cptr:1.1.0",

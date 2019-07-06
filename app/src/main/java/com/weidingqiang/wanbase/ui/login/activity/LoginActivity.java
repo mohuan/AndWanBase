@@ -11,6 +11,7 @@ import com.jakewharton.rxbinding2.view.RxView;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.weidingqiang.wanbase.R;
 import com.weidingqiang.wanbase.base.RootActivity;
+import com.weidingqiang.wanbase.ui.down.activity.FileListActivity;
 import com.weidingqiang.wanbase.ui.login.contract.LoginContract;
 import com.weidingqiang.wanbase.ui.login.presenter.LoginPresenter;
 import com.weidingqiang.wanbase.ui.main.activity.MainActivity;
@@ -63,7 +64,7 @@ public class LoginActivity extends RootActivity<LoginPresenter> implements Login
 
     @Override
     public void responeError(String errorMsg) {
-
+        startActivity(FileListActivity.newInstance(getApplicationContext()));
     }
 
     @OnClick(R.id.login_button)
